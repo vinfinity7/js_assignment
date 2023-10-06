@@ -1,0 +1,56 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\saksh\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\Users\saksh\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\saksh\AppData\Local\Programs\Python\Python311\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\Program Files\Git\cmd;C:\Users\saksh\anaconda3\Scripts;C:\ProgramData\chocolatey\bin;C:\Program Files\PostgreSQL\15\bin;C:\Users\saksh\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Docker\Docker\resources\bin;C:\Users\saksh\AppData\Local\Volta\bin;C:\Users\saksh\AppData\Local\Microsoft\WindowsApps;C:\Users\saksh\AppData\Local\Programs\Microsoft VS Code\bin;C:\MinGW\bin;C:\php;C:\Users\saksh\AppData\Local\GitHubDesktop\bin;C:\Users\saksh\AppData\Roaming\npm;C:\Program Files\PostgreSQL\15\bin;C:\Users\saksh\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\saksh\AppData\Local\Programs\mongosh\;C:\Program Files\MongoDB\Server\7.0\bin;C:\Program Files\OpenSSL-Win64\bin;;C:\Users\saksh\AppData\Local\JetBrains\IntelliJ IDEA 2023.2.2\bin;
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: http://192.168.249.1:1000/jest: socket hang up
+      at connResetException (node:internal/errors:717:14)
+      at Socket.socketOnEnd (node:_http_client:526:23)
+      at Socket.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+  	"name": "js_assignment",
+  	"version": "1.0.0",
+  	"description": "Assignment to check basic familiarity with JS functions and primitives!",
+  	"main": "index.js",
+  	"directories": {
+  		"test": "tests"
+  	},
+  	"scripts": {
+  		"test": "jest"
+  	},
+  	"repository": {
+  		"type": "git",
+  		"url": "git+https://github.com/eshaanagg/js_assignment.git"
+  	},
+  	"author": "EshaanAgg",
+  	"license": "ISC",
+  	"bugs": {
+  		"url": "https://github.com/eshaanagg/js_assignment/issues"
+  	},
+  	"homepage": "https://github.com/eshaanagg/js_assignment#readme",
+  	"devDependencies": {
+  		"jest": "^29.5.0",
+  		"jest-html-reporters": "^3.1.4"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
