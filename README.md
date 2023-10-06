@@ -1,3 +1,9 @@
+# Hecker Hecks 
+Hey hackers!
+It’s time for you to implement what you’ve learned during the workshop.
+
+<br/>
+
 # JS Assignments
 
 As a part of this assignment, you would have to complete some simple javascript functions present in the `src` directory!
