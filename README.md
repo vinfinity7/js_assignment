@@ -52,3 +52,7 @@ and run the unit tests again using `npm run test`.
 - Implement the function using your JS knowledge and verify your solution by running tests until the failed test passes (becomes green).
 - Even after your solution passes, try to refactor it! Try to make your code as pretty and simple as possible keeping the tests green!
 - You can see your total score in the tests in the command line where you ran the `npm run test` command. You can include a screenshot of the same while submitting the pull request.#
+
+For any queries, contact us:
+- [Saksham Misra](https://github.com/vinfinity7) : +91 89602 14894
+- [Kislay Udbhav Verma](https://github.com/kuv2707): +91 83405 01229
