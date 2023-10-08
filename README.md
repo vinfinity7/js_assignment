@@ -12,7 +12,7 @@ To run the project:
 
 1. Fork and clone the repository.
 2. Install [NodeJS](https://nodejs.org/en) on your system.
-3. Run `npm i`.
+3. Run `npm i` in the terminal of vscode where you've cloned the code :).
 4. Solve the tasks!
 5. You can view your progress by running the command `npm run test` and then viewing the file `test.html`!
 6. When done, push the same to GitHub and create a Pull Request to submit your work. 
