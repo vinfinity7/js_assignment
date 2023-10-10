@@ -19,7 +19,7 @@ To run the project:
 
 ## How to implement assignments
 
-Task modules are located in the `src` folder. Each module consists of several tasks (functions you need to complete) for specified topic. Each task/fucntion looks mostly like the following:
+Task modules are located in the `src` folder. Each module consists of several tasks (functions you need to complete) for specified topic. Each task/function looks mostly like the following:
 
 ```javascript
 /**
