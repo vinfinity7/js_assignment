@@ -11,7 +11,8 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-	throw new Error("Not implemented");
+	// see https://web.archive.org/web/20170404182053/https://jsperf.com/concat-vs-plus-vs-join
+	return value1 + value2;
 }
 
 /**
@@ -26,11 +27,11 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-	throw new Error("Not implemented");
+	return value.length;
 }
 
 /**
- * Returns a first char of the given string.
+ * Returns a first char of the given string if it exists, otherwise returns null
  *
  * @param {string} value
  * @return {string}
@@ -40,7 +41,8 @@ function getStringLength(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-	throw new Error("Not implemented");
+	const firstChar = value.charAt(0);
+	return firstChar ? firstChar : null;
 }
 
 /**
@@ -55,7 +57,7 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-	throw new Error("Not implemented");
+	return value.trim();
 }
 
 /**
@@ -70,7 +72,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-	throw new Error("Not implemented");
+	return value.repeat(count);
 }
 
 /**
@@ -86,7 +88,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-	throw new Error("Not implemented");
+	return str.replace(value, '');
 }
 
 /**
@@ -100,7 +102,7 @@ function removeFirstOccurrences(str, value) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-	throw new Error("Not implemented");
+	return str.toUpperCase();
 }
 
 /**
@@ -120,7 +122,13 @@ function convertToUpperCase(str) {
  *
  */
 function encodeToRot13(str) {
-	throw new Error("Not implemented");
+	return [...str].map(c => {
+		if (/[a-zA-Z]/.test(c)) {
+			const base = /[a-z]/.test(c) ? 'a'.charCodeAt(0) : 'A'.charCodeAt(0);
+			return String.fromCharCode((c.charCodeAt(0) - base + 13) % 26 + base);
+		}
+		return c;
+	}).join('');
 }
 
 module.exports = {

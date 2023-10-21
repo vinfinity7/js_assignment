@@ -10,13 +10,13 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-	throw new Error("Not implemented");
+	return width * height;
 }
 
 /**
  * Returns an average of two given numbers.
  *
- * @param {numder} value1
+ * @param {number} value1
  * @param {number} value2
  * @return {number}
  *
@@ -26,11 +26,11 @@ function getRectangleArea(width, height) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-	throw new Error("Not implemented");
+	return value1 / 2 + value2 / 2;  	// individually dividing values before adding avoids saturation of very large values to Infinity
 }
 
 /**
- * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
+ * Returns a root of linear equation a*x + b = 0 given by coefficients a and b
  *
  * @param {number} a
  * @param {number} b
@@ -42,7 +42,8 @@ function getAverage(value1, value2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-	throw new Error("Not implemented");
+	if (a === 0) return null; 		// invalid equation
+	return (-b/a) ? (-b/a) : 0;  // ensures that -0 becomes 0
 }
 
 /**
@@ -58,7 +59,7 @@ function getLinearEquationRoot(a, b) {
  *     0     => 0
  */
 function getLastDigit(value) {
-	throw new Error("Not implemented");
+	return Math.abs(value) % 10;
 }
 
 /**
@@ -73,7 +74,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-	throw new Error("Not implemented");
+	return Number(value);
 }
 
 /**
@@ -94,7 +95,14 @@ function parseNumberFromString(value) {
  *   17 => true
  */
 function isPrime(n) {
-	throw new Error("Not implemented");
+	if (!Number.isInteger(n) || n < 2) {	// filter out non-integers and negative values
+		return false;
+	}
+	let flagPrime = true;
+	for (let i = 2; i * i <= n && flagPrime; i++) {
+		flagPrime = (n % i);
+	}
+	return !!flagPrime; // !! ensures that flagPrime is either true or false
 }
 
 module.exports = {
