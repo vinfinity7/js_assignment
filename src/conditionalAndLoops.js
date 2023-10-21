@@ -19,7 +19,27 @@
  *
  */
 function getFizzBuzz(num) {
-	throw new Error("Not implemented");
+	var x;
+	if(num % 3 == 0 && num % 5==0 )
+	{
+		x='FizzBuzz';
+		return x;
+
+	}
+	
+	if(num %3 ==0 && num%5!=0)
+	{x='Fizz';return x;}
+	
+	if(num % 5 == 0 && num % 3 !=0)
+	{
+		x = 'Buzz';return x;	
+	}
+	
+	if((num % 3 !=0) && (num % 5 !=0))
+	{
+		x =num;
+		return x;
+	}
 }
 
 /**
@@ -34,7 +54,13 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-	throw new Error("Not implemented");
+	let fact =1;
+	for(var i=1;i<=n;i++)
+	{
+        fact = fact *i;
+	}
+	return fact;
+
 }
 
 /**
@@ -50,7 +76,12 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-	throw new Error("Not implemented");
+	var sum =0;
+	for(var i=n1;i<=n2;i++)
+	{
+       sum = sum +i;
+	}
+return sum ;	
 }
 
 /**
@@ -68,10 +99,19 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(a, b, c) {
-	throw new Error("Not implemented");
-}
+function isTriangle(a, b, c) {var c;
+	if(a+b>c && b+c>a && a+c>b)
+	{   
+		
+		return true; 
+	}
+	else{
+	
+	return false;
+	}
+}	
 
+reverseString;
 /**
  * Reverse the specified string (put all chars in reverse order)
  *
@@ -85,7 +125,14 @@ function isTriangle(a, b, c) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-	throw new Error("Not implemented");
+	var strNew="";
+	
+	for(var i=0;i<str.length;i++)
+	{   
+		strNew= strNew + str.charAt((str.length-1)-i);
+	}
+	
+	return strNew;
 }
 
 /**
@@ -110,8 +157,30 @@ function reverseString(str) {
  *   '{[(<{[]}>)]}' = true
  */
 function isBracketsBalanced(str) {
-	throw new Error("Not implemented");
-}
+	
+      
+        
+	const stack = [];
+	const brackets = {
+	  "(": ")",
+	  "{": "}",
+	  "[": "]",
+	  "<": ">" ,
+	};
+  
+	for (let char of str) {
+	  if (brackets[char]) {
+		stack.push(char); 
+	  } else {
+		if (stack.length === 0 || brackets[stack.pop()] !== char) {
+		  return false; 
+		}
+	  }
+	}
+  
+	return stack.length === 0; 
+
+}	
 
 /**
  * Returns the human readable string of time period specified by the start and end time.
@@ -145,7 +214,45 @@ function isBracketsBalanced(str) {
  *
  */
 function timespanToHumanString(startDate, endDate) {
-	throw new Error("Not implemented");
+	/**var d1 = new Date(startDate);
+	var d2= new Date(endDate);
+    var x =d1.getTime();
+	var y= d2.getTime();
+	if(y-x <= 45)
+	{
+		return "a few second ago";
+	}
+	elseif(y - x <= 90 && y-x>45)
+	{
+		return "a minute ago";
+	}
+	elseif((y-x)/1000 >90 && (y-x)/(1000))
+	{
+		return "a few second ago";
+	}
+	if(endDate-startDate <= 45)
+	{
+		return "a few second ago";
+	}
+	if(endDate-startDate <= 45)
+	{
+		return "a few second ago";
+	}
+	if(endDate-startDate <= 45)
+	{
+		return "a few second ago";
+	}
+	if(endDate-startDate <= 45)
+	{
+		return "a few second ago";
+	}
+	if(endDate-startDate <= 45)
+	{
+		return "a few second ago";
+	}
+*/
+throw new Error("NOT IMPLEMENTED");	
+	
 }
 
 /**
@@ -168,8 +275,11 @@ function timespanToHumanString(startDate, endDate) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
-function toNaryString(num, n) {
-	throw new Error("Not implemented");
+function toNaryString(num, n) {var y ="";
+	 y = num.toString(n);
+	return y;
+	
+	
 }
 
 module.exports = {
