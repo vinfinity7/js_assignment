@@ -11,7 +11,7 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-	throw new Error("Not implemented");
+	return arr.indexOf(value);
 }
 
 /**
@@ -27,7 +27,7 @@ function findElement(arr, value) {
  *    [] => []
  */
 function doubleArray(arr) {
-	throw new Error("Not implemented");
+	return [...arr, ...arr];
 }
 
 /**
@@ -42,7 +42,7 @@ function doubleArray(arr) {
  *    [] => []
  */
 function getArrayOfPositives(arr) {
-	throw new Error("Not implemented");
+	return arr.filter(num => num > 0);
 }
 
 /**
@@ -59,7 +59,7 @@ function getArrayOfPositives(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-	throw new Error("Not implemented");
+	return arr.filter(ele => ele);
 }
 
 /**
@@ -73,11 +73,11 @@ function removeFalsyValues(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
-	throw new Error("Not implemented");
+	return arr.map(ele => ele.length);
 }
 
 /**
- * Returns the sum of all items in the specified array of numbers
+ * Returns the sum of all items in the specified array of numbers, ignoring non-numeric elements
  *
  * @param {array} arr
  * @return {number}
@@ -89,7 +89,9 @@ function getStringsLength(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-	throw new Error("Not implemented");
+	let sum = 0;
+	arr.forEach(val => sum += isNaN(val) ? 0 : val);
+	return sum;
 }
 
 module.exports = {
