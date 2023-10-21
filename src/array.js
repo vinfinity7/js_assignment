@@ -46,6 +46,7 @@ function findElement(arr, value) {
  */
 function doubleArray(arr) {
 	var n;
+	n=arr.length;
  for(var i=0;i<n;i++)
 	{
 	  arr.push(arr[i]);
@@ -87,13 +88,19 @@ function getArrayOfPositives(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-	var arr2 = arr.filter(checkfalasy);
-	function checkfalasy(arr)
-	{
-		return (arr != NaN) && (arr != null) && (arr != 0) && (arr!="") && (arr != undefined);
-	}
-	return arr2;
 	
+	let newArr = [];
+ 
+   
+    arr.forEach((k) => {
+       
+        if (k) {
+            newArr.push(k);
+        }
+    });
+    
+    return newArr;
+
 }
 
 /**

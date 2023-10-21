@@ -55,35 +55,9 @@ function getFirstChar(value) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(value){ var count1=0,count2=0;
-	var length=value.length;
-	for(var i=0;i<value.length;i++)
-	{   if(value.charAt(i)==' ' || value.charAt(i) == '\t' )
-	  {
-		count1 ++;
-	  }
+function removeLeadingAndTrailingWhitespaces(value){
 
-		if(value.charAt(i)!=' ' && value.charAt(i) != '\t')
-		{
-			break;
-		}
-	}
-	for(var j=value.length-1;j>=0;j--)
-	
-		{   if(value.charAt(j) == ' ' || value.charAt(j) == '\t')
-	  {
-		count2 ++;
-	  }
-
-		if(value.charAt(j)!=' ' && value.charAt(j) != '\t')
-		{
-			break;
-		}
-	}
-	value = value.slice(0,count1-1);
-	value=value.slice(length-count2,length-1);
-	
-	return value;
+	return value.trim();
 }
 
 /**
@@ -153,14 +127,9 @@ function convertToUpperCase(str) {
  *
  */
 function encodeToRot13(str) {
-	var x ,y;
-	for(var i=0;i<str.length;i++)
-	{
-       x = str.charCodeAt(i);
-	   x=x+13;
-	   y=y+ y.fromCharCode(i)
-	}
-	return y;
+
+		return str.replace(/[a-z]/gi, letter => String.fromCharCode(letter.charCodeAt(0) + (letter.toLowerCase() <= 'm' ? 13 : -13)));
+
 }
 
 module.exports = {

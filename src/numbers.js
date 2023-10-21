@@ -26,7 +26,7 @@ function getRectangleArea(width, height) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-    var avg =(value1+value2)/2;
+    var avg =(value1/2) +(value2/2)
 	return avg ;
 }
 

@@ -157,44 +157,29 @@ function reverseString(str) {
  *   '{[(<{[]}>)]}' = true
  */
 function isBracketsBalanced(str) {
-/** 	let stack = [];
-    for(let i = 0; i < expr.length; i++)
-    {
-        let x = expr[i];
- 
-        if (x == '(' || x == '[' || x == '{'|| x=='<')
-        {   
-            stack.push(x);
-            continue;
+	
+      
+        
+	const stack = [];
+	const brackets = {
+	  "(": ")",
+	  "{": "}",
+	  "[": "]",
+	  "<": ">" ,
+	};
+  
+	for (let char of str) {
+	  if (brackets[char]) {
+		stack.push(char); 
+	  } else {
+		if (stack.length === 0 || brackets[stack.pop()] !== char) {
+		  return false; 
 		}
-        if (stack.length == 0)
-            return false;
-             
-        let check;
-        switch (x){
-        case ')':
-            check = stack.pop();
-            if (check == '{' || check == '[')
-			return false;
-            break;
- 
-        case '}':
-            check = stack.pop();
-            if (check == '(' || check == '[')
-                return false;
-            break;
- 
-        case ']':
-            check = stack.pop();
-            if (check == '(' || check == '{')
-                return false;
-            break;
-		case '>':
-		    check =stack.pop;
-			if(check == ''
+	  }
+	}
+  
+	return stack.length === 0; 
 
-        }
-    }*/
 }	
 
 /**
@@ -229,7 +214,45 @@ function isBracketsBalanced(str) {
  *
  */
 function timespanToHumanString(startDate, endDate) {
-	throw new Error("Not implemented");
+	/**var d1 = new Date(startDate);
+	var d2= new Date(endDate);
+    var x =d1.getTime();
+	var y= d2.getTime();
+	if(y-x <= 45)
+	{
+		return "a few second ago";
+	}
+	elseif(y - x <= 90 && y-x>45)
+	{
+		return "a minute ago";
+	}
+	elseif((y-x)/1000 >90 && (y-x)/(1000))
+	{
+		return "a few second ago";
+	}
+	if(endDate-startDate <= 45)
+	{
+		return "a few second ago";
+	}
+	if(endDate-startDate <= 45)
+	{
+		return "a few second ago";
+	}
+	if(endDate-startDate <= 45)
+	{
+		return "a few second ago";
+	}
+	if(endDate-startDate <= 45)
+	{
+		return "a few second ago";
+	}
+	if(endDate-startDate <= 45)
+	{
+		return "a few second ago";
+	}
+*/
+throw new Error("NOT IMPLEMENTED");	
+	
 }
 
 /**
