@@ -11,14 +11,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/savsch/js_assignment.git"
+		"url": "git+https://github.com/vinfinity7/js_assignment.git"
 	},
 	"author": "vinfinity7",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/savsch/js_assignment/issues"
+		"url": "https://github.com/vinfinity7/js_assignment/issues"
 	},
-	"homepage": "https://github.com/savsch/js_assignment#readme",
+	"homepage": "https://github.com/vinfinity7/js_assignment#readme",
 	"devDependencies": {
 		"jest": "^29.5.0",
 		"jest-html-reporters": "^3.1.4"
