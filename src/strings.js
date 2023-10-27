@@ -11,7 +11,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-	throw new Error("Not implemented");
+	return value1+value2 ;
 }
 
 /**
@@ -26,7 +26,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-	throw new Error("Not implemented");
+	return value.length;
 }
 
 /**
@@ -40,7 +40,8 @@ function getStringLength(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-	throw new Error("Not implemented");
+	let arr = value.split('');
+	return arr[0];
 }
 
 /**
@@ -55,7 +56,8 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-	throw new Error("Not implemented");
+	let str=value.trim();
+	return str;
 }
 
 /**
@@ -70,7 +72,11 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-	throw new Error("Not implemented");
+	let result='';
+	for(let i=0; i<count ; i++){
+		result=result+value;
+	}
+	return result;
 }
 
 /**
@@ -86,7 +92,9 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-	throw new Error("Not implemented");
+	let index = str.indexOf(value);
+	if(index==-1){return str;}
+	return str.slice(0,index)+str.slice(index+ value.length);
 }
 
 /**
@@ -100,7 +108,7 @@ function removeFirstOccurrences(str, value) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-	throw new Error("Not implemented");
+	return str.toUpperCase();
 }
 
 /**
@@ -120,7 +128,10 @@ function convertToUpperCase(str) {
  *
  */
 function encodeToRot13(str) {
-	throw new Error("Not implemented");
+	return str.replace(/[a-zA-Z]/g,function(c){
+		let base=c <= 'Z' ? 65:97;
+		return String.fromCharCode((c.charCodeAt(0)-base+13)%26+base);
+	});
 }
 
 module.exports = {

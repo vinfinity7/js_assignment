@@ -19,7 +19,12 @@
  *
  */
 function getFizzBuzz(num) {
-	throw new Error("Not implemented");
+	if((num%3)!=0 && (num%5)!=0){return num;}
+	else{
+		if((num%3)==0 && (num%5)!=0){return 'Fizz';}
+		else{if((num%3)!=0 && (num%5)==0){return 'Buzz';}
+		else{if((num%3)==0 && (num%5)==0){return 'FizzBuzz';}}}
+	}
 }
 
 /**
@@ -34,7 +39,11 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-	throw new Error("Not implemented");
+	let result=1;
+	for(let i=1 ; i<=n;i++){
+		result=result*i;
+	}
+	return result;
 }
 
 /**
@@ -50,7 +59,12 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-	throw new Error("Not implemented");
+	let sum=0;
+	for(let i=n1; i<=n2; i++){
+		sum=sum + i;
+	}
+	return sum;
+
 }
 
 /**
@@ -69,7 +83,10 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a, b, c) {
-	throw new Error("Not implemented");
+	if( (a+b)>c && (b+c)>a && (a+c)>b ){
+		return true;
+	}
+	else{return false;}
 }
 
 /**
@@ -85,7 +102,7 @@ function isTriangle(a, b, c) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-	throw new Error("Not implemented");
+	return str.split("").reverse().join('');
 }
 
 /**
@@ -109,9 +126,22 @@ function reverseString(str) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
+
 function isBracketsBalanced(str) {
-	throw new Error("Not implemented");
-}
+		const stack = [];
+		const brackets = {'(': ')', '[': ']', '{': '}', '<': '>'};
+	
+		for (const char of str) {
+			if (brackets.hasOwnProperty(char)) {
+				stack.push(char);
+			} else if (brackets[stack.pop()] !== char) {
+				return false;
+			}
+		}
+	
+		return stack.length === 0;
+	}
+
 
 /**
  * Returns the human readable string of time period specified by the start and end time.
@@ -145,8 +175,42 @@ function isBracketsBalanced(str) {
  *
  */
 function timespanToHumanString(startDate, endDate) {
-	throw new Error("Not implemented");
-}
+	
+		const timeDifference = Math.floor((endDate- startDate) / 1000); 
+	
+		if (timeDifference >= 0 && timeDifference <= 45) {
+			return "a few seconds ago";
+		} 
+		else if ( timeDifference>45 && timeDifference <= 90) {
+			return "a minute ago";
+		} else if (90< timeDifference && timeDifference <= 45 * 60) {
+			const minutes = Math.floor(timeDifference / 60);
+			return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`;
+		} else if (45*60< timeDifference && timeDifference <= 90 * 60) {
+			return "an hour ago";
+		} else if (90*60< timeDifference && timeDifference <= 22 * 60 * 60) {
+			const hours = Math.floor(timeDifference / (60 * 60));
+			return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
+		} else if (22*60*60<timeDifference && timeDifference <= 36 * 60 * 60) {
+			return "a day ago";
+		} else if (36*60*60<timeDifference && timeDifference <= 25 * 24 * 60 * 60) {
+			const days = Math.floor(timeDifference / (24 * 60 * 60));
+			return `${days} ${days === 1 ? 'day' : 'days'} ago`;
+		} else if (25*24*60*60<timeDifference && timeDifference <= 45 * 24 * 60 * 60) {
+			return "a month ago";
+		} else if (45*24*60*60<timeDifference && timeDifference <= 345 * 24 * 60 * 60) {
+			const months = Math.floor(timeDifference / (30 * 24 * 60 * 60));
+			return `${months} ${months === 1 ? 'month' : 'months'} ago`;
+		} else if (345*24*60*60<timeDifference && timeDifference <= 545 * 24 * 60 * 60) {
+			return "a year ago";
+		} else {
+			const years = Math.floor(timeDifference / (365 * 24 * 60 * 60));
+			return `${years} ${years === 1 ? 'year' : 'years'} ago`;
+		}
+	}
+	
+	
+
 
 /**
  * Returns the string with n-ary (binary, ternary, etc, where n<=10) representation of
@@ -169,7 +233,17 @@ function timespanToHumanString(startDate, endDate) {
  *    365, 10 => '365'
  */
 function toNaryString(num, n) {
-	throw new Error("Not implemented");
+	 	 
+		if(num==0){
+			return "0";
+		}
+		var toNaryString = "";
+		while(num>0){
+			var remainder=num%n;
+			toNaryString = remainder+toNaryString;
+			num=Math.floor(num/n);
+		}
+		return toNaryString;
 }
 
 module.exports = {
