@@ -176,41 +176,39 @@ function isBracketsBalanced(str) {
  */
 function timespanToHumanString(startDate, endDate) {
 	
-		const timeDifference = Math.floor((endDate- startDate) / 1000); 
+const timeDifference = (endDate - startDate) ;
+		const seconds = Math.round(timeDifference / 1000);
+		const minutes = Math.round(timeDifference / (1000*60));
+		const hours = Math.round(timeDifference / (1000*60*60));
+		const days = Math.round(timeDifference / (1000*60*60*24));
+		const months = Math.round(timeDifference / (1000*60*60*24*30));
+		const years = Math.round(timeDifference / (1000*60*60*24*30*12));
 	
-		if (timeDifference >= 0 && timeDifference <= 45) {
+		if ( seconds < 45) {
 			return "a few seconds ago";
-		} 
-		else if ( timeDifference>45 && timeDifference <= 90) {
+		} else if (seconds <= 90) {
 			return "a minute ago";
-		} else if (90< timeDifference && timeDifference <= 45 * 60) {
-			const minutes = Math.floor(timeDifference / 60);
-			return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`;
-		} else if (45*60< timeDifference && timeDifference <= 90 * 60) {
+		} else if (minutes <= 45) {
+			return `${minutes} minutes ago`;
+		} else if (minutes <= 90) {
 			return "an hour ago";
-		} else if (90*60< timeDifference && timeDifference <= 22 * 60 * 60) {
-			const hours = Math.floor(timeDifference / (60 * 60));
-			return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
-		} else if (22*60*60<timeDifference && timeDifference <= 36 * 60 * 60) {
+		} else if (hours <= 22) {
+			return `${hours} hours ago`;
+		} else if (hours <= 36) {
 			return "a day ago";
-		} else if (36*60*60<timeDifference && timeDifference <= 25 * 24 * 60 * 60) {
-			const days = Math.floor(timeDifference / (24 * 60 * 60));
-			return `${days} ${days === 1 ? 'day' : 'days'} ago`;
-		} else if (25*24*60*60<timeDifference && timeDifference <= 45 * 24 * 60 * 60) {
+		} else if (days <= 25) {
+			return `${days} days ago`;
+		} else if (days <= 45) {
 			return "a month ago";
-		} else if (45*24*60*60<timeDifference && timeDifference <= 345 * 24 * 60 * 60) {
-			const months = Math.floor(timeDifference / (30 * 24 * 60 * 60));
-			return `${months} ${months === 1 ? 'month' : 'months'} ago`;
-		} else if (345*24*60*60<timeDifference && timeDifference <= 545 * 24 * 60 * 60) {
+		} else if (days <= 345) {
+			return `${months} months ago`;
+		} else if (days <= 545) {
 			return "a year ago";
 		} else {
-			const years = Math.floor(timeDifference / (365 * 24 * 60 * 60));
-			return `${years} ${years === 1 ? 'year' : 'years'} ago`;
+			return `${years} years ago`;
 		}
 	}
 	
-	
-
 
 /**
  * Returns the string with n-ary (binary, ternary, etc, where n<=10) representation of
