@@ -141,8 +141,6 @@ function isBracketsBalanced(str) {
 	
 		return stack.length === 0;
 	}
-
-
 /**
  * Returns the human readable string of time period specified by the start and end time.
  * The result string should be constrcuted using the folliwing rules:
@@ -175,7 +173,6 @@ function isBracketsBalanced(str) {
  *
  */
 function timespanToHumanString(startDate, endDate) {
-	
 const timeDifference = (endDate - startDate) ;
 		const seconds = Math.round(timeDifference / 1000);
 		const minutes = Math.round(timeDifference / (1000*60));
@@ -208,8 +205,6 @@ const timeDifference = (endDate - startDate) ;
 			return `${years} years ago`;
 		}
 	}
-	
-
 /**
  * Returns the string with n-ary (binary, ternary, etc, where n<=10) representation of
  * specified number.
