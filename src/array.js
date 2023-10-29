@@ -11,7 +11,19 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-	throw new Error("Not implemented");
+	if(arr.includes(value))
+	{
+		for(var i = 0 ; i < arr.length ; i++)
+		{
+			if(arr[i]==value)
+			{
+				return i
+			}
+		}
+	}
+	else{
+		return -1
+	}
 }
 
 /**
@@ -27,7 +39,7 @@ function findElement(arr, value) {
  *    [] => []
  */
 function doubleArray(arr) {
-	throw new Error("Not implemented");
+	return arr.concat(arr)
 }
 
 /**
@@ -42,7 +54,14 @@ function doubleArray(arr) {
  *    [] => []
  */
 function getArrayOfPositives(arr) {
-	throw new Error("Not implemented");
+	var result= []
+	for(var i = 0 ; i < arr.length ; i++)
+	{
+		if(arr[i]>0){
+			result.push(arr[i])
+		}
+	}
+	return result
 }
 
 /**
@@ -59,7 +78,7 @@ function getArrayOfPositives(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-	throw new Error("Not implemented");
+	return arr.filter(Boolean)
 }
 
 /**
@@ -73,7 +92,11 @@ function removeFalsyValues(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
-	throw new Error("Not implemented");
+	var result = []
+	for(var i = 0 ; i < arr.length ; i++){
+		result.push(arr[i].length)
+	}
+	return result
 }
 
 /**
@@ -89,7 +112,11 @@ function getStringsLength(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-	throw new Error("Not implemented");
+	var sum = 0 
+	for(var i = 0 ; i < arr.length ; i++){
+		sum+=arr[i]
+	}
+	return sum
 }
 
 module.exports = {
